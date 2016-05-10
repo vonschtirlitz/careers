@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.params=isFree\ whereTo\ isCruiseCard
+comment0.target=Opportunity(boolean,\ java.lang.String,\ boolean)
+numComments=1

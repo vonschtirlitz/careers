@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=PlayerCreator()
+comment1.params=playerMax
+comment1.target=PlayerCreator(int)
+comment2.params=
+comment2.target=Player\ newPlayer()
+numComments=3
