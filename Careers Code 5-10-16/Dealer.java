@@ -67,16 +67,12 @@ public class Dealer
     
     public static Opportunity dealTopOpportunity()
     {
-        Opportunity temp = opportunityHand.get(1);
-        opportunityHand.remove(1);
-        return temp;
+        return opportunityHand.remove(0);
     }
     
     public static experienceCard dealTopExperience()
-    {
-        experienceCard temp = experienceHand.get(1);
-        experienceHand.remove(1);
-        return temp;
+    {       
+        return experienceHand.remove(0);
     }
     
     public static void collectExperienceCard(experienceCard card)
