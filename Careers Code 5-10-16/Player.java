@@ -1,6 +1,5 @@
 //Player
 //Methods for creating and handling game data for each player
-//Updated Nikita@Mon 5/9- added more pre/post, added hasWon boolean for easier tracking of finished players with GlobalChecker class, tbi tuesday
 import java.util.*;
 
 public class Player
@@ -17,9 +16,9 @@ public class Player
     private ArrayList <Opportunity> opportunityHand;
     private ArrayList <experienceCard> experienceHand;
     private ArrayList <String> workExperience;
-	private boolean hasWon;
-	private int position;
-	private int subBoard;
+    private boolean hasWon;
+    private int position;
+    private int subBoard;
     
     //Constructor
     public Player(int cashGoal, int fameGoal, int happinessGoal,int startingSalary, int playerNumber)
