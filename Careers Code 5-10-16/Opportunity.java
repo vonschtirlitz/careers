@@ -9,4 +9,9 @@ public class Opportunity
         opportunity = whereTo;
         isCruise = isCruiseCard;
     }
+    public void useCard()
+    {
+        //this.setPos(opportunity);
+        //this.setBoard(0);
+    }
 }
