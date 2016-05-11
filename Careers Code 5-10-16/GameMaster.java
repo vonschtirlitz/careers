@@ -5,11 +5,13 @@ public class GameMaster
     private ArrayList <Player> playerList;
     private ArrayList <Board> gameboard;
     private int turn;
+    private Dealer dealer;
     
     public GameMaster()
     {
         playerList = new ArrayList<Player>();
         gameboard = new ArrayList<Board>();
+        dealer = new Dealer();
         this.turn = 0;
     }
     
@@ -75,6 +77,10 @@ public class GameMaster
                 curPlayer.setSalary(0);
             else
                 curPlayer.increaseSalary(curSpot.getSalaryModifier());
+            for(int i=0,i<=curSpot.oppCardsNeeded(),i++)
+                player.addOpportunityCard(dealer.dealTopOpportunity);
+            for(int i=0,i<=curSpot.expCardsNeeded(),i++)
+                player.addExperienceCard(dealer.dealTopExperience);
             //add stuff to be processed for player during turn
         }
         this.turn++;
