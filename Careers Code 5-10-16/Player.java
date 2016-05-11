@@ -65,14 +65,14 @@ public class Player
         Dealer.collectOpportunityCard(card);
     }
     
-    public void addOpportunityCard()
+    public void addOpportunityCard(opportuniy card)
     {
-        opportunityHand.add(Dealer.dealTopOpportunity());
+        opportunityHand.add(card);
     }
     
-    public void addExperienceCard()
+    public void addExperienceCard(experienceCard card)
     {
-        experienceHand.add(Dealer.dealTopExperience());
+        experienceHand.add(card);
     }
     
 	//Salary Methods
