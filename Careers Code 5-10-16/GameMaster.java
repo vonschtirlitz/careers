@@ -54,10 +54,27 @@ public class GameMaster
     public void processTurn()
     {
         System.out.println("Turn "+(turn+1));
-        for(Player currentPlayer : playerList)
+        for(Player curPlayer : playerList)
         {
-            System.out.println("It's "+currentPlayer.getName()+"'s turn");
-            currentPlayer.move(currentPlayer.getBoard(),roll());
+            System.out.println("It's "+curPlayer.getName()+"'s turn");
+            curPlayer.move(curPlayer.getBoard(),roll());
+            Spot curSpot = gameboard.get(curPlayer.getBoard()).get(curPlayer.getPos());
+            if((curPlayer.getCash()+curSpot.getCashModifier())<0)
+                curPlayer.setCash(0);
+            else
+                curPlayer.addCash(curSpot.getCashModifier());
+            if((curPlayer.getFame()+curSpot.getFameModifier())<0)
+                curPlayer.setFame(0);
+            else
+                curPlayer.addFame(curSpot.getFameModifier());
+            if((curPlayer.getHappiness()+curSpot.getHappinessModifier())<0)
+                curPlayer.setHappiness(0);
+            else
+                curPlayer.addHappiness(curSpot.getHappinessModifier());
+            if((curPlayer.getSalary()+curSpot.getSalaryModifier())<0)
+                curPlayer.setSalary(0);
+            else
+                curPlayer.increaseSalary(curSpot.getSalaryModifier());
             //add stuff to be processed for player during turn
         }
         this.turn++;
