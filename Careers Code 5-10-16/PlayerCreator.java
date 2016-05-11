@@ -20,7 +20,6 @@ public class PlayerCreator
     
     public Player newPlayer()
     {
-        System.out.println("currentplayernum = " + currentPlayerNum);
         Player tempResult = new Player(1000,1000,1000,1000,this.currentPlayerNum);
         this.currentPlayerNum = currentPlayerNum+1;
         return tempResult;

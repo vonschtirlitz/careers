@@ -210,7 +210,7 @@ public class Player
 	{
 	    this.position = pos;
 	}
-	
+
 	public int getPos()
 	{
 	    return position;
@@ -225,8 +225,12 @@ public class Player
 	{
 	    return subBoard;
 	}
-	   
-	   
+	
+	public void move(int board, int addPos)
+	{
+	    this.subBoard = board;
+	    position += addPos;
+	}
 
 	//Misc Methods
 	
