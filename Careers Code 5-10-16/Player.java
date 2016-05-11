@@ -20,6 +20,7 @@ public class Player
     private int position;
     private int subBoard;
     private String name;
+    private int specialPosition;
     
     //Constructor
     public Player(int cashGoal, int fameGoal, int happinessGoal,int startingSalary, int playerNumber, String name)
@@ -65,7 +66,7 @@ public class Player
         Dealer.collectOpportunityCard(card);
     }
     
-    public void addOpportunityCard(opportuniy card)
+    public void addOpportunityCard(Opportunity card)
     {
         opportunityHand.add(card);
     }
@@ -233,6 +234,14 @@ public class Player
 	    this.subBoard = board;
 	    position += addPos;
 	}
+	
+	/*
+	public void setSpecialPos(int board, int position, int specialPosition)
+	{
+	    this.subBoard = board;
+	    position += addPos;
+	}
+	*/
 
 	//Misc Methods
 	

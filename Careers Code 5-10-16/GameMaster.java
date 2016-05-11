@@ -77,10 +77,10 @@ public class GameMaster
                 curPlayer.setSalary(0);
             else
                 curPlayer.increaseSalary(curSpot.getSalaryModifier());
-            for(int i=0,i<=curSpot.oppCardsNeeded(),i++)
-                player.addOpportunityCard(dealer.dealTopOpportunity);
-            for(int i=0,i<=curSpot.expCardsNeeded(),i++)
-                player.addExperienceCard(dealer.dealTopExperience);
+            for(int i=0;i<(curSpot.oppCardNeeded());i++)
+                curPlayer.addOpportunityCard(dealer.dealTopOpportunity());
+            for(int i=0;i<(curSpot.expCardNeeded());i++)
+                curPlayer.addExperienceCard(dealer.dealTopExperience());
             //add stuff to be processed for player during turn
         }
         this.turn++;

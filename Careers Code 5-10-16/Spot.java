@@ -58,10 +58,12 @@ public class Spot
     {
         this.salaryModifier = salaryModifier;
     }
+    
     public int oppCardNeeded()
     {
         return oppNeeded;
     }
+    
     public int expCardNeeded()
     {
         return expNeeded;

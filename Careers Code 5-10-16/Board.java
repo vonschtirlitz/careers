@@ -9,7 +9,7 @@ public class Board
         //This is temp array filler, real array will have actual values planted in appropriate spots
         for(int i = 0; i<size; i++)
         {
-            Spot temp = new Spot(i,0,0,0,0);
+            Spot temp = new Spot(i,0,0,0,0,0,0);
             path.add(temp);
         }
         this.name = name;
