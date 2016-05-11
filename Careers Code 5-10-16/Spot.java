@@ -5,13 +5,18 @@ public class Spot
     private int fameModifier;
     private int happinessModifier;
     private int salaryModifier;
-    public Spot(int newPosition, int cashModifier, int fameModifier, int happinessModifier, int salaryModifier)
+    private int oppNeeded;
+    private int expNeeded;
+    public Spot(int newPosition, int cashModifier, int fameModifier, int happinessModifier, int salaryModifier,
+                int oppNeeded, int expNeeded)
     {
         this.position = newPosition;
         this.cashModifier = cashModifier;
         this.fameModifier = fameModifier;
         this.happinessModifier = happinessModifier;
         this.salaryModifier = salaryModifier;
+        this.oppNeeded = oppNeeded;
+        this.expNeeded = expNeeded;
     }
     
     public int getCashModifier()
@@ -52,5 +57,13 @@ public class Spot
     public void setSalaryModifier(int salaryModifier)
     {
         this.salaryModifier = salaryModifier;
+    }
+    public int oppCardNeeded()
+    {
+        return oppNeeded;
+    }
+    public int expCardNeeded()
+    {
+        return expNeeded;
     }
 }
