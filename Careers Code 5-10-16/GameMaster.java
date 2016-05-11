@@ -56,6 +56,7 @@ public class GameMaster
         System.out.println("Turn "+(turn+1));
         for(Player currentPlayer : playerList)
         {
+            System.out.println("It's "+currentPlayer.getName()+"'s turn");
             currentPlayer.move(currentPlayer.getBoard(),roll());
             //add stuff to be processed for player during turn
         }

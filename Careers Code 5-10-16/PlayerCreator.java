@@ -20,7 +20,7 @@ public class PlayerCreator
     
     public Player newPlayer()
     {
-        Player tempResult = new Player(1000,1000,1000,1000,this.currentPlayerNum);
+        Player tempResult = new Player(1000,1000,1000,1000,this.currentPlayerNum, "Joe");
         this.currentPlayerNum = currentPlayerNum+1;
         return tempResult;
     }

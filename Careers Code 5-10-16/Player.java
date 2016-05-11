@@ -19,9 +19,10 @@ public class Player
     private boolean hasWon;
     private int position;
     private int subBoard;
+    private String name;
     
     //Constructor
-    public Player(int cashGoal, int fameGoal, int happinessGoal,int startingSalary, int playerNumber)
+    public Player(int cashGoal, int fameGoal, int happinessGoal,int startingSalary, int playerNumber, String name)
     {
         targetCash = cashGoal;
         targetFame = fameGoal;
@@ -37,6 +38,7 @@ public class Player
         workExperience = new ArrayList <String>();
 		hasWon = false;
 		int position = 0;
+		this.name = name;
     }
     
     public void useOpportunityCard(int cardPosition)
@@ -233,6 +235,11 @@ public class Player
 	}
 
 	//Misc Methods
+	
+	public String getName()
+	{
+	    return name;
+	}
 	
     //pre - none
     //post - returns if a player has meet the victory condition
