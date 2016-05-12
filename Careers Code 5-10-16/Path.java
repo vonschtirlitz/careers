@@ -7,6 +7,7 @@ public class Path
     {
         lane = new ArrayList<Spot>();
         //This is temp array filler, real array will have actual values planted in appropriate spots
+        //changes
         for(int i = 0; i<size; i++)
         {
             Spot temp = new Spot(i,0,0,0,0,0,0);

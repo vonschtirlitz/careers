@@ -21,7 +21,7 @@ public class Player
     private int subPath;
     private String name;
     private int specialPosition;
-    
+    //ima a change wooo
     //Constructor
     public Player(int cashGoal, int fameGoal, int happinessGoal,int startingSalary, int playerNumber, String name)
     {
