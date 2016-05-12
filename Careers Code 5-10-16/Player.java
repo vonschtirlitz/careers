@@ -19,9 +19,11 @@ public class Player
     private boolean hasWon;
     private int position;
     private int subBoard;
+    private String name;
+    private int specialPosition;
     
     //Constructor
-    public Player(int cashGoal, int fameGoal, int happinessGoal,int startingSalary, int playerNumber)
+    public Player(int cashGoal, int fameGoal, int happinessGoal,int startingSalary, int playerNumber, String name)
     {
         targetCash = cashGoal;
         targetFame = fameGoal;
@@ -37,6 +39,7 @@ public class Player
         workExperience = new ArrayList <String>();
 		hasWon = false;
 		int position = 0;
+		this.name = name;
     }
     
     public void useOpportunityCard(int cardPosition)
@@ -63,14 +66,14 @@ public class Player
         Dealer.collectOpportunityCard(card);
     }
     
-    public void addOpportunityCard()
+    public void addOpportunityCard(Opportunity card)
     {
-        opportunityHand.add(Dealer.dealTopOpportunity());
+        opportunityHand.add(card);
     }
     
-    public void addExperienceCard()
+    public void addExperienceCard(experienceCard card)
     {
-        experienceHand.add(Dealer.dealTopExperience());
+        experienceHand.add(card);
     }
     
 	//Salary Methods
@@ -210,7 +213,7 @@ public class Player
 	{
 	    this.position = pos;
 	}
-	
+
 	public int getPos()
 	{
 	    return position;
@@ -225,10 +228,27 @@ public class Player
 	{
 	    return subBoard;
 	}
-	   
-	   
+	
+	public void move(int board, int addPos)
+	{
+	    this.subBoard = board;
+	    position += addPos;
+	}
+	
+	/*
+	public void setSpecialPos(int board, int position, int specialPosition)
+	{
+	    this.subBoard = board;
+	    position += addPos;
+	}
+	*/
 
 	//Misc Methods
+	
+	public String getName()
+	{
+	    return name;
+	}
 	
     //pre - none
     //post - returns if a player has meet the victory condition
