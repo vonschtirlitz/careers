@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=img
+comment0.target=ImagePanel(java.lang.String)
+comment1.params=img
+comment1.target=ImagePanel(java.awt.Image)
+comment2.params=g
+comment2.target=void\ paintComponent(java.awt.Graphics)
+comment3.params=newImage
+comment3.target=void\ setImage(java.awt.Image)
+comment4.params=x\ y
+comment4.target=void\ updateImage(int,\ int)
+numComments=5
