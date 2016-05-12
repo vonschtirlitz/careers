@@ -11,7 +11,6 @@ public class Opportunity
     }
     public void useCard()
     {
-        //this.setPos(opportunity);
-        //this.setBoard(0);
+        //return opportunity;
     }
 }

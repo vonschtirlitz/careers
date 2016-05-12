@@ -3,14 +3,14 @@ import java.util.*;
 public class GameMaster
 {
     private ArrayList <Player> playerList;
-    private ArrayList <Board> gameboard;
+    private ArrayList <Path> gameboard;
     private int turn;
     private Dealer dealer;
     
     public GameMaster()
     {
         playerList = new ArrayList<Player>();
-        gameboard = new ArrayList<Board>();
+        gameboard = new ArrayList<Path>();
         dealer = new Dealer();
         this.turn = 0;
     }
@@ -31,17 +31,17 @@ public class GameMaster
         }
     }
     
-    public void initBoard()
+    public void initPath()
     {
-        Board main = new Board(32,"Main");
-        Board business = new Board(11,"Business");
-        Board college = new Board(7,"College");
-        Board farming = new Board(9,"Farming");
-        Board hollywood = new Board(9,"Hollywood");
-        Board moon = new Board(13,"Moon");
-        Board politics = new Board(11,"Politics");
-        Board prospecting = new Board(11,"Prospecting");
-        Board sea = new Board(9,"Sea");
+        Path main = new Path(32,"Main");
+        Path business = new Path(11,"Business");
+        Path college = new Path(7,"College");
+        Path farming = new Path(9,"Farming");
+        Path hollywood = new Path(9,"Hollywood");
+        Path moon = new Path(13,"Moon");
+        Path politics = new Path(11,"Politics");
+        Path prospecting = new Path(11,"Prospecting");
+        Path sea = new Path(9,"Sea");
         gameboard.add(main);
         gameboard.add(business);
         gameboard.add(college);
@@ -59,8 +59,8 @@ public class GameMaster
         for(Player curPlayer : playerList)
         {
             System.out.println("It's "+curPlayer.getName()+"'s turn");
-            curPlayer.move(curPlayer.getBoard(),roll());
-            Spot curSpot = gameboard.get(curPlayer.getBoard()).get(curPlayer.getPos());
+            curPlayer.move(curPlayer.getPath(),roll());
+            Spot curSpot = gameboard.get(curPlayer.getPath()).get(curPlayer.getPos());
             if((curPlayer.getCash()+curSpot.getCashModifier())<0)
                 curPlayer.setCash(0);
             else

@@ -18,7 +18,7 @@ public class Player
     private ArrayList <String> workExperience;
     private boolean hasWon;
     private int position;
-    private int subBoard;
+    private int subPath;
     private String name;
     private int specialPosition;
     
@@ -219,19 +219,19 @@ public class Player
 	    return position;
 	}
 	
-	public void setBoard(int num)
+	public void setPath(int num)
 	{
-	    subBoard = num;
+	    subPath = num;
 	}
 	
-	public int getBoard()
+	public int getPath()
 	{
-	    return subBoard;
+	    return subPath;
 	}
 	
-	public void move(int board, int addPos)
+	public void move(int path, int addPos)
 	{
-	    this.subBoard = board;
+	    this.subPath = path;
 	    position += addPos;
 	}
 	
