@@ -45,25 +45,15 @@ public class Player
     public void useOpportunityCard(int cardPosition)
     {
         Opportunity temp = opportunityHand.get(cardPosition);
-        handOffOpportunity(temp);
+        Dealer.collectOpportunityCard(temp);
         opportunityHand.remove(cardPosition);
     }
     
     public void returnExperienceToDealer(int cardPosition)
     {
         experienceCard temp = experienceHand.get(cardPosition);
-        handOffExperience(temp);
+        Dealer.collectExperienceCard(temp);
         experienceHand.remove(cardPosition);
-    }
-    
-    public void handOffExperience(experienceCard card)
-    {
-        Dealer.collectExperienceCard(card);
-    }
-    
-    public void handOffOpportunity(Opportunity card)
-    {
-        Dealer.collectOpportunityCard(card);
     }
     
     public void addOpportunityCard(Opportunity card)
@@ -76,6 +66,15 @@ public class Player
         experienceHand.add(card);
     }
     
+    public ArrayList <Opportunity> getOppHand()
+    {
+        return opportunityHand;
+    }
+    
+    public ArrayList <experienceCard> getExpHand()
+    {
+        return experienceHand;
+    }
 	//Salary Methods
 	
 	//Pre- none

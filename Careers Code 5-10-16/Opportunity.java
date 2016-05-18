@@ -1,9 +1,10 @@
 public class Opportunity
 {
     boolean requirementsNotNeeded;
-    String opportunity;
+    int opportunity;
     boolean isCruise;
-    public Opportunity(boolean isFree, String whereTo, boolean isCruiseCard)
+    
+    public Opportunity(boolean isFree, int whereTo, boolean isCruiseCard)
     {
         requirementsNotNeeded = isFree;
         opportunity = whereTo;
