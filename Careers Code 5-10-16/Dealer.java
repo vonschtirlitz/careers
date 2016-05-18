@@ -34,30 +34,30 @@ public class Dealer
     
     public void fillOpportunityHand()
     {
-        opportunityHand.add(new Opportunity(true, "Politics", false));
-        opportunityHand.add(new Opportunity(true, "Hollywood", false));
-        opportunityHand.add(new Opportunity(true, "Sea", false));
-        opportunityHand.add(new Opportunity(true, "Uranium", false));
-        opportunityHand.add(new Opportunity(true, "Vacation", false));
-        opportunityHand.add(new Opportunity(true, "Vacation", false));
-        opportunityHand.add(new Opportunity(false, "Moon", false));
-        opportunityHand.add(new Opportunity(false, "Uranium", false));
-        opportunityHand.add(new Opportunity(false, "Uranium", false));
-        opportunityHand.add(new Opportunity(false, "Farming", false));
-        opportunityHand.add(new Opportunity(false, "Farming", false));
-        opportunityHand.add(new Opportunity(false, "Hollywood", false));
-        opportunityHand.add(new Opportunity(false, "Hollywood", false));
-        opportunityHand.add(new Opportunity(false, "Politics", false));
-        opportunityHand.add(new Opportunity(false, "Politics", false));
-        opportunityHand.add(new Opportunity(false, "College", false));
-        opportunityHand.add(new Opportunity(false, "College", false));
-        opportunityHand.add(new Opportunity(false, "College", false));
-        opportunityHand.add(new Opportunity(false, "Business", false));
-        opportunityHand.add(new Opportunity(false, "Business", false));
-        opportunityHand.add(new Opportunity(false, "Business", false));
-        opportunityHand.add(new Opportunity(false, "Your Choice", false));
-        opportunityHand.add(new Opportunity(false, "Your Choice", false));
-        opportunityHand.add(new Opportunity(true, "Cruise", true));
+        opportunityHand.add(new Opportunity(true, 19, false));
+        opportunityHand.add(new Opportunity(true, 22, false));
+        opportunityHand.add(new Opportunity(true, 14, false));
+        opportunityHand.add(new Opportunity(true, 27, false));
+        opportunityHand.add(new Opportunity(true, 24, false));
+        opportunityHand.add(new Opportunity(true, 24, false));
+        opportunityHand.add(new Opportunity(false, 30, false));
+        opportunityHand.add(new Opportunity(false, 27, false));
+        opportunityHand.add(new Opportunity(false, 27, false));
+        opportunityHand.add(new Opportunity(false, 4, false));
+        opportunityHand.add(new Opportunity(false, 4, false));
+        opportunityHand.add(new Opportunity(false, 22, false));
+        opportunityHand.add(new Opportunity(false, 22, false));
+        opportunityHand.add(new Opportunity(false, 19, false));
+        opportunityHand.add(new Opportunity(false, 19, false));
+        opportunityHand.add(new Opportunity(false, 7, false));
+        opportunityHand.add(new Opportunity(false, 7, false));
+        opportunityHand.add(new Opportunity(false, 7, false));
+        opportunityHand.add(new Opportunity(false, 11, false));
+        opportunityHand.add(new Opportunity(false, 11, false));
+        opportunityHand.add(new Opportunity(false, 11, false));
+        opportunityHand.add(new Opportunity(false, -1, false));
+        opportunityHand.add(new Opportunity(false, -1, false));
+        opportunityHand.add(new Opportunity(true, 14, true));
     }
     
     public ArrayList <Opportunity> getOpportunityDeck()

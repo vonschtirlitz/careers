@@ -10,4 +10,9 @@ public class experienceCard
     {
         return squaresToMove;
     }
+    
+    public String toString()
+    {
+        return "";
+    }
 }
