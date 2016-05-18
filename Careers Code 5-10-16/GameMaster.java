@@ -59,6 +59,14 @@ public class GameMaster
         for(Player curPlayer : playerList)
         {
             System.out.println("It's "+curPlayer.getName()+"'s turn");
+            if(curPlayer.getOppHand().size()>0);
+            {
+                //ask if wants to use card, then do shit
+            }
+            if(curPlayer.getExpHand().size()>0);
+            {
+                //ask if wants to use card, then do shit
+            }
             curPlayer.move(curPlayer.getPath(),roll());
             Spot curSpot = gameboard.get(curPlayer.getPath()).get(curPlayer.getPos());
             if((curPlayer.getCash()+curSpot.getCashModifier())<0)
@@ -94,6 +102,16 @@ public class GameMaster
         Scanner reader = new Scanner(System.in);
         reader.nextLine();
         return ((int)(Math.random()*6+1)+(int)(Math.random()*6)+1);
+    }
+    
+    public void PlayExperienceCard()
+    {
+        //fill me
+    }
+    
+    public void PlayOpportunityCard()
+    {
+        //fill me
     }
     
     public void removePlayer()
