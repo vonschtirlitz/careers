@@ -14,4 +14,8 @@ public class Opportunity
     {
         //return opportunity;
     }
+    public String toString()
+    {
+        return "";
+    }
 }

@@ -59,15 +59,20 @@ public class GameMaster
         for(Player curPlayer : playerList)
         {
             System.out.println("It's "+curPlayer.getName()+"'s turn");
-            if(curPlayer.getOppHand().size()>0);
+            if(curPlayer.getOppHand().size()>0 && curPlayer.getExpHand().size()>0)
             {
-                //ask if wants to use card, then do shit
+                System.out.println("Your hand is:");
+                for(int i=0;i<curPlayer.getOppHand().size();i++)
+                {
+                    System.out.println(curPlayer.getOppHand().get(i));
+                }
+                for(int i=0;i<curPlayer.getExpHand().size();i++)
+                {
+                    System.out.println(curPlayer.getExpHand().get(i));
+                }
             }
-            if(curPlayer.getExpHand().size()>0);
-            {
-                //ask if wants to use card, then do shit
-            }
-            curPlayer.move(curPlayer.getPath(),roll());
+            else
+                curPlayer.move(curPlayer.getPath(),roll());
             Spot curSpot = gameboard.get(curPlayer.getPath()).get(curPlayer.getPos());
             if((curPlayer.getCash()+curSpot.getCashModifier())<0)
                 curPlayer.setCash(0);
