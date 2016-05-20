@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=newPosition\ cashModifier\ fameModifier\ happinessModifier\ salaryModifier\ oppNeeded\ expNeeded
+comment0.target=Spot(int,\ int,\ int,\ int,\ int,\ int,\ int)
+comment1.params=
+comment1.target=int\ getCashModifier()
+comment10.params=
+comment10.target=int\ expCardNeeded()
+comment2.params=cashModifier
+comment2.target=void\ setCashModifier(int)
+comment3.params=
+comment3.target=int\ getFameModifier()
+comment4.params=fameModifier
+comment4.target=void\ setFameModifier(int)
+comment5.params=
+comment5.target=int\ getHappinessModifier()
+comment6.params=happinessModifier
+comment6.target=void\ setHappinessModifier(int)
+comment7.params=
+comment7.target=int\ getSalaryModifier()
+comment8.params=salaryModifier
+comment8.target=void\ setSalaryModifier(int)
+comment9.params=
+comment9.target=int\ oppCardNeeded()
+numComments=11

@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=size\ name
+comment0.target=Path(int,\ java.lang.String)
+comment1.params=pos
+comment1.target=Spot\ get(int)
+numComments=2

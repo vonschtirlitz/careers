@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=img
+comment0.target=ImagePanel(java.lang.String)
+comment0.text=\r\n\ \ \ \ public\ void\ setPlayers()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ ArrayList<Player>\ temp\ \=\ getPlayerList();\r\n\ \ \ \ \ \ \ \ for(int\ x;\ x\ <\ alpha.getNumPlayers();\ x++)\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ players.add(temp.get(x));\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ }\r\n
+comment1.params=img
+comment1.target=ImagePanel(java.awt.Image)
+comment2.params=g
+comment2.target=void\ paintComponent(java.awt.Graphics)
+comment3.params=newImage
+comment3.target=void\ setImage(java.awt.Image)
+comment4.params=x\ y
+comment4.target=void\ updateImage(int,\ int)
+numComments=5
