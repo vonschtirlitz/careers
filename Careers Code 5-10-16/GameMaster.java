@@ -70,6 +70,7 @@ public class GameMaster
                 {
                     System.out.println(curPlayer.getExpHand().get(i));
                 }
+                cardsMainMenu(curPlayer);
             }
             else
                 curPlayer.move(curPlayer.getPath(),roll());
@@ -107,6 +108,42 @@ public class GameMaster
         Scanner reader = new Scanner(System.in);
         reader.nextLine();
         return ((int)(Math.random()*6+1)+(int)(Math.random()*6)+1);
+    }
+    
+    public void cardsMainMenu(Player curPlayer)
+    {
+        Scanner user = new Scanner(System.in);
+        if(curPlayer.getOppHand().size()>0)
+        {
+            if(curPlayer.getExpHand().size()>0)
+                cardsBothMenu(curPlayer);
+            else
+                cardsOppMenu(curPlayer);
+        }
+        else
+        {
+            
+        }
+    }
+    
+    public void cardsBothMenu(Player curPlayer)
+    {
+        System.out.println("1 to use an experience card, 2 to use an opportunity card, 0 to roll");
+    }
+    
+     public void cardsExpMenu(Player curPlayer)
+    {
+        System.out.println("1 to use an experience card, 0 to roll");
+    }
+    
+     public void cardsOppMenu(Player curPlayer)
+    {
+        System.out.println("1 to use an opportunity card, 0 to roll");
+    }
+    
+    public void cardsExpPlaying(Player curPlayer)
+    {
+        
     }
     
     public void PlayExperienceCard()
