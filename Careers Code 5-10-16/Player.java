@@ -21,6 +21,7 @@ public class Player
     private int subPath;
     private String name;
     private int specialPosition;
+    private boolean skipTurn;
     //ima a change wooo
     //Constructor
     public Player(int cashGoal, int fameGoal, int happinessGoal,int startingSalary, int playerNumber, String name)
@@ -249,6 +250,15 @@ public class Player
 	    return name;
 	}
 	
+	public boolean getSkipTurn()
+	{
+	    return skipTurn;
+	}
+	
+	public void setSkipTurn(boolean result)
+	{
+	    skipTurn = result;
+	}
     //pre - none
     //post - returns if a player has meet the victory condition
     public boolean isVictoryMeet()

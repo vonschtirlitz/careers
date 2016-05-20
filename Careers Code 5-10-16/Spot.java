@@ -7,6 +7,18 @@ public class Spot
     private int salaryModifier;
     private int oppGiven;
     private int expGiven;
+    private boolean skipsTurn;
+    private int skipTurnRequirements;
+    private int rollLessThan;
+    private int minReq;
+    private int minReturn;
+    private int medReq;
+    private int medReturn;
+    private int maxReq;
+    private int maxReturn;
+    private boolean spendTimesDice;
+    private boolean diceMod;
+    
     public Spot(int newPosition, int cashModifier, int fameModifier, int happinessModifier, int salaryModifier,
                 int oppGiven, int expGiven)
     {
@@ -17,6 +29,36 @@ public class Spot
         this.salaryModifier = salaryModifier;
         this.oppGiven = oppGiven;
         this.expGiven = expGiven;
+        
+    }
+    
+    public Spot(int position, int cashModifier, int fameModifier, int happinessModifier)
+    {
+        this.position = position;
+        this.cashModifier = cashModifier;
+        this.fameModifier = fameModifier;
+        this.happinessModifier = happinessModifier;
+        this.diceMod = true;
+    }
+    
+    public Spot(int position, boolean skipsTurn, int skipTurnRequirements, int rollLessThan)
+    {
+        this.position = position;
+        this.skipsTurn = skipsTurn;
+        this.skipTurnRequirements = skipTurnRequirements;
+        this.rollLessThan = rollLessThan;
+    }
+    
+    public Spot(int position, int minReq, int minReturn, int medReq, int medReturn, int maxReq, int maxReturn, boolean spendTimesDice)
+    {
+        this.position = position;
+        this.minReq = minReq;
+        this.minReturn = minReturn;
+        this.medReq = medReq;
+        this.medReturn = medReturn;
+        this.maxReq = maxReq;
+        this.maxReturn = maxReturn;
+        this.spendTimesDice = spendTimesDice;
     }
     
     public int getCashModifier()
@@ -67,5 +109,25 @@ public class Spot
     public int expCardGiven()
     {
         return expGiven;
+    }
+    
+    public boolean getSkipsTurn()
+    {
+        return skipsTurn;
+    }
+    
+    public int getSkipTurnRequirements()
+    {
+        return skipTurnRequirements;
+    }
+    
+    public int getRollLessThan()
+    {
+        return rollLessThan;
+    }
+    
+    public boolean getDiceMod()
+    {
+        return diceMod;
     }
 }

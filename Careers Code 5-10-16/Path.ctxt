@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=size\ name
+comment0.target=Path(int,\ java.lang.String)
+comment1.params=pos
+comment1.target=Spot\ get(int)
+comment2.params=
+comment2.target=void\ setToFarming()
+comment3.params=
+comment3.target=void\ setToCollege()
+comment4.params=
+comment4.target=void\ setToBuisness()
+comment5.params=
+comment5.target=void\ setToSea()
+comment6.params=
+comment6.target=void\ setToPolitics()
+numComments=7

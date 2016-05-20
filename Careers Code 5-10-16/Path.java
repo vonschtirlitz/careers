@@ -32,7 +32,8 @@ public class Path
         lane.add(new Spot(1,0,2,0,0,0,0));
         lane.add(new Spot(2,0,0,0,0,0,1));
         lane.add(new Spot(3,0,0,1,0,0,0));
-        // This depends on a throw of the dice lane.add(new Spot(4,
+        //dicemod spot
+        lane.add(new Spot(4,1000,0,0));
         lane.add(new Spot(5,0,2,4,0,0,0));
         lane.add(new Spot(6,0,0,6,0,0,0));
         lane.add(new Spot(7,5000,0,0,0,0,0));
@@ -49,7 +50,8 @@ public class Path
         
         //This needs to be an enterance spot: lane.add(new Spot(0,0,0,0,0,0));
         lane.add(new Spot(1,0,0,4,0,0,0));
-        //This needs to be able to make the player loose their next turn lane.add(new Spot(2
+        //This needs to be able to make the player lose their next turn lane.add(new Spot(2
+        lane.add(new Spot(2,true,0,5));
         lane.add(new Spot(3,0,0,2,0,0,0));
         lane.add(new Spot(4,0,0,2,0,0,0));
         lane.add(new Spot(5,0,0,0,0,2,0));
