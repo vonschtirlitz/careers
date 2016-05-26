@@ -8,7 +8,7 @@ public class Spot
     private int oppGiven;
     private int expGiven;
     private boolean skipsTurn;
-    private int skipTurnRequirements;
+    private int skipTurnRequirements;//amount of cash needed to skip the spot
     private int rollLessThan;
     private int minReq;
     private int minReturn;
@@ -18,6 +18,8 @@ public class Spot
     private int maxReturn;
     private boolean spendTimesDice;
     private boolean diceMod;
+    private int moveToBoard;
+    private int moveToSpot;
     
     public Spot(int newPosition, int cashModifier, int fameModifier, int happinessModifier, int salaryModifier,
                 int oppGiven, int expGiven)
@@ -49,6 +51,7 @@ public class Spot
         this.rollLessThan = rollLessThan;
     }
     
+    //
     public Spot(int position, int minReq, int minReturn, int medReq, int medReturn, int maxReq, int maxReturn, boolean spendTimesDice)
     {
         this.position = position;
@@ -59,6 +62,14 @@ public class Spot
         this.maxReq = maxReq;
         this.maxReturn = maxReturn;
         this.spendTimesDice = spendTimesDice;
+    }
+    
+    //Switch Spot- moves player to another spot or board
+    public Spot(int position, int moveToBoard, int moveToSpot)
+    {
+        this.position = position;
+        this.moveToBoard = moveToBoard;
+        this.moveToSpot = moveToSpot;
     }
     
     public int getCashModifier()
@@ -129,5 +140,15 @@ public class Spot
     public boolean getDiceMod()
     {
         return diceMod;
+    }
+    
+    public int getMoveBoard()
+    {
+        return moveToBoard;
+    }
+    
+    public int getMoveSpot()
+    {
+        return moveToSpot;
     }
 }

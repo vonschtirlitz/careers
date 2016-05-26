@@ -59,7 +59,8 @@ public class GameMaster
         for(Player curPlayer : playerList)
         {
             System.out.println("It's "+curPlayer.getName()+"'s turn");
-            boolean allowOthers = true;
+            boolean allowOtherMethods = true;
+            boolean usedCard = true;
             
             //SkipTurn block
             //Currently operating on 2 dice
@@ -81,7 +82,7 @@ public class GameMaster
                             curPlayer.setSkipTurn(false);
                         }
                         else
-                            allowOthers = false;
+                            allowOtherMethods = false;
                     }
                 }
                 else
@@ -91,11 +92,11 @@ public class GameMaster
                             curPlayer.setSkipTurn(false);
                         }
                         else
-                            allowOthers = false;
+                            allowOtherMethods = false;
                 }
             }
             
-            if(allowOthers)
+            if(allowOtherMethods)
             {
                 if(curPlayer.getOppHand().size()>0 && curPlayer.getExpHand().size()>0)
                 {
@@ -103,16 +104,121 @@ public class GameMaster
                     for(int i=0;i<curPlayer.getOppHand().size();i++)
                     {
                         System.out.println(curPlayer.getOppHand().get(i));
+                        usedCard = false;
                     }
                     for(int i=0;i<curPlayer.getExpHand().size();i++)
                     {
                         System.out.println(curPlayer.getExpHand().get(i));
+                        usedCard = false;
                     }
                 }
-                else
-                    curPlayer.move(curPlayer.getPath(),rollTwo());
+                
+                if(!usedCard)
+                {
+                    int rollTwo = rollTwo();
+                    int rollOne = rollOne();
+                    int pathSize = gameboard.get(curPlayer.getPath()).getSize();
+                    if(curPlayer.getPath()==0)
+                    {
+                        int tempPos = rollTwo + curPlayer.getPos();
+                        if(tempPos > 31)
+                        {
+                            curPlayer.setPos(curPlayer.getPos() + tempPos);
+                        }
+                    }
+                    if(curPlayer.getPath()==1)
+                    {
+                        int tempPos = rollOne + curPlayer.getPos();
+                        if(tempPos > 9)
+                        {
+                            curPlayer.setPath(0);
+                            curPlayer.setPos((tempPos - 9) + 4);
+                        }
+                    }
+                    if(curPlayer.getPath()==2)
+                    {
+                        int tempPos = rollOne + curPlayer.getPos();
+                        if(tempPos > 7)
+                        {
+                            curPlayer.setPath(0);
+                            curPlayer.setPos((tempPos - 7) + 9);
+                        }
+                    }
+                    if(curPlayer.getPath()==3)
+                    {
+                        int tempPos = rollOne + curPlayer.getPos();
+                        if(tempPos > 11)
+                        {
+                            curPlayer.setPath(0);
+                            curPlayer.setPos((tempPos - 11) + 11);
+                        }
+                    }
+                    if(curPlayer.getPath()==4)
+                    {
+                        int tempPos = rollOne + curPlayer.getPos();
+                        if(tempPos > 9)
+                        {
+                            curPlayer.setPath(0);
+                            curPlayer.setPos((tempPos - 9) + 16);
+                        }
+                    }
+                    if(curPlayer.getPath()==5)
+                    {
+                        int tempPos = rollOne + curPlayer.getPos();
+                        if(tempPos > 11)
+                        {
+                            curPlayer.setPath(0);
+                            curPlayer.setPos((tempPos - 11) + 19);
+                        }
+                    }
+                    if(curPlayer.getPath()==6)
+                    {
+                        int tempPos = rollOne + curPlayer.getPos();
+                        if(tempPos > 9)
+                        {
+                            curPlayer.setPath(0);
+                            curPlayer.setPos((tempPos - 9) + 24);
+                        }
+                    }
+                    if(curPlayer.getPath()==7)
+                    {
+                        int tempPos = rollOne + curPlayer.getPos();
+                        if(tempPos > 11)
+                        {
+                            curPlayer.setPath(0);
+                            if(((tempPos - 11) + 27) <= 31)
+                            {
+                                curPlayer.setPos((tempPos - 11) + 27);
+                            }
+                            else
+                            {
+                                int tempValue = tempPos - 11 + 27;
+                                tempValue -= 32;
+                                curPlayer.setPos(tempValue);
+                            }
+                        }
+                    }
+                    if(curPlayer.getPath()==8)
+                    {
+                        int tempPos = rollOne + curPlayer.getPos();
+                        if(tempPos > 13)
+                        {
+                            curPlayer.setPath(0);
+                            if(((tempPos - 13) + 0) <= 31)
+                            {
+                                curPlayer.setPath((tempPos - 13) + 0);
+                            }
+                            else
+                            {
+                                int tempValue = tempPos - 13;
+                                tempValue -= 32;
+                                curPlayer.setPos(tempValue);
+                            }
+                        }
+                    }
+                }
                 Spot curSpot = gameboard.get(curPlayer.getPath()).get(curPlayer.getPos());
-                if((curPlayer.getCash()+curSpot.getCashModifier())<0)
+                if((curPlayer.getCash() + curSpot.getCashModifier())<0)
                     curPlayer.setCash(0);
                 else
                 {
@@ -177,7 +283,7 @@ public class GameMaster
         System.out.println("rolling...");
         Scanner reader = new Scanner(System.in);
         reader.nextLine();
-        return ((int)(Math.random()*6+1)+(int)(Math.random()*6)+1);
+        return rollOne()+rollOne();
     }
     
     public int rollOne()
@@ -187,6 +293,8 @@ public class GameMaster
         reader.nextLine();
         return ((int)(Math.random()*6+1));
     }
+    
+    
     
     public void PlayExperienceCard()
     {

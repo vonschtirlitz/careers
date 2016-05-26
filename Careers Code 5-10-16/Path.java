@@ -3,6 +3,8 @@ public class Path
 {
     private ArrayList<Spot> lane;
     private String name;
+    private int pathSize;
+    
     public Path(int size, String name)
     {
         lane = new ArrayList<Spot>();
@@ -14,6 +16,12 @@ public class Path
             lane.add(temp);
         }
         this.name = name;
+        this.pathSize = size-1;
+    }
+    
+    public int getSize()
+    {
+        return pathSize;
     }
     
     public Spot get(int pos)
