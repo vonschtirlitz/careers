@@ -229,10 +229,10 @@ public class Player
 	    return subPath;
 	}
 	
-	public void move(int path, int addPos)
+	public void move(int path, int setPos)
 	{
 	    this.subPath = path;
-	    position += addPos;
+	    this.position = setPos;
 	}
 	
 	/*

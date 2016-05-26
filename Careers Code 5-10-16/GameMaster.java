@@ -124,6 +124,7 @@ public class GameMaster
                         if(tempPos > 31)
                         {
                             curPlayer.setPos(curPlayer.getPos() + tempPos);
+                            curPlayer.addCash(curPlayer.getSalary());
                         }
                     }
                     if(curPlayer.getPath()==1)
@@ -218,6 +219,12 @@ public class GameMaster
                     }
                 }
                 Spot curSpot = gameboard.get(curPlayer.getPath()).get(curPlayer.getPos());
+                //teleport
+                if(curSpot.getMoveBoard()>-1)
+                {
+                    curPlayer.move(curSpot.getMoveBoard(),curSpot.getMoveSpot());
+                }
+                curSpot = gameboard.get(curPlayer.getPath()).get(curPlayer.getPos());
                 if((curPlayer.getCash() + curSpot.getCashModifier())<0)
                     curPlayer.setCash(0);
                 else
@@ -262,6 +269,26 @@ public class GameMaster
                     else
                         curPlayer.increaseSalary(curSpot.getSalaryModifier());
                 }
+                if(curSpot.getHalveCash())
+                {
+                    curPlayer.setCash(curPlayer.getCash()/2);
+                }
+                 if(curSpot.getHalveFame())
+                {
+                    curPlayer.setFame(curPlayer.getFame()/2);
+                }
+                 if(curSpot.getHalveHappiness())
+                {
+                    curPlayer.setHappiness(curPlayer.getHappiness()/2);
+                }
+                 if(curSpot.getHalveSalary())
+                {
+                    curPlayer.setSalary(curPlayer.getSalary()/2);
+                }
+                if(curSpot.getStart())
+                {
+                    curPlayer.addCash(curPlayer.getSalary());
+                }
                 for(int i=0;i<(curSpot.oppCardGiven());i++)
                 {
                     curPlayer.addOpportunityCard(dealer.dealTopOpportunity());
@@ -270,6 +297,7 @@ public class GameMaster
                 {
                     curPlayer.addExperienceCard(dealer.dealTopExperience());
                 }
+                
                 //add stuff to be processed for player during turn
             }
             this.turn++;
