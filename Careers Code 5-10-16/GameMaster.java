@@ -63,13 +63,10 @@ public class GameMaster
             {
                 System.out.println("Your hand is:");
                 for(int i=0;i<curPlayer.getOppHand().size();i++)
-                {
                     System.out.println(curPlayer.getOppHand().get(i));
-                }
                 for(int i=0;i<curPlayer.getExpHand().size();i++)
-                {
                     System.out.println(curPlayer.getExpHand().get(i));
-                }
+                cardsMainMenu(curPlayer);
             }
             else
                 curPlayer.move(curPlayer.getPath(),roll());
@@ -109,12 +106,77 @@ public class GameMaster
         return ((int)(Math.random()*6+1)+(int)(Math.random()*6)+1);
     }
     
-    public void PlayExperienceCard()
+    public void cardsMainMenu(Player curPlayer)
+    {
+        Scanner user = new Scanner(System.in);
+        if(curPlayer.getOppHand().size()>0)
+        {
+            if(curPlayer.getExpHand().size()>0)
+                cardsBothMenu(curPlayer,user);
+            else
+                cardsOppMenu(curPlayer,user);
+        }
+        else
+            cardsExpMenu(curPlayer,user);
+    }
+    
+    public void cardsBothMenu(Player curPlayer, Scanner user)
+    {
+        System.out.println("1 to use an experience card, 2 to use an opportunity card, 0 to roll");
+        if(user.nextInt()==1)
+            cardsExpPlaying(curPlayer,user);
+        if(user.nextInt()==2)
+            cardsOppPlaying(curPlayer,user);
+        if(user.nextInt()==0)
+            usedCard=false;
+        else
+            cardsBothMenu(curPlayer,user);
+    }
+    
+     public void cardsExpMenu(Player curPlayer, Scanner user)
+    {
+        System.out.println("1 to use an experience card, 0 to roll");
+        if(user.nextInt()==1)
+            cardsExpPlaying(curPlayer,user);
+        if(user.nextInt()==0)
+            usedCard=false;
+        else
+            cardsExpMenu(curPlayer,user);
+    }
+    
+     public void cardsOppMenu(Player curPlayer, Scanner user)
+    {
+        System.out.println("1 to use an opportunity card, 0 to roll");
+        if(user.nextInt()==1)
+            cardsOppPlaying(curPlayer,user);
+        if(user.nextInt()==0)
+            usedCard=false;
+        else
+            cardsOppMenu(curPlayer,user);
+    }
+    
+    public void cardsExpPlaying(Player curPlayer, Scanner user)
+    {
+        for(int i=1;i<curPlayer.getExpHand().size()+1;i++)
+                    System.out.println(i+": move "+ curPlayer.getExpHand().get(i-1).getValue()+"spaces");
+        System.out.println("Or 0 to go back/nWhich card do you want to use?");
+        int cardNumber=user.nextInt();
+        if(cardNumber<=curPlayer.getExpHand().size()+1 && cardNumber>0)
+            playExperienceCard(curPlayer,cardNumber);
+    }
+    
+    public void cardsOppPlaying(Player curPlayer, Scanner user)
+    {
+        for(int i=1;i<curPlayer.getOppHand().size()+1;i++)
+                    System.out.println(curPlayer.getOppHand().get(i));
+    }
+    
+    public void playExperienceCard(Player curPlayer,int cardNumber)
     {
         //fill me
     }
     
-    public void PlayOpportunityCard()
+    public void playOpportunityCard(Player curPlayer,int cardNumber)
     {
         //fill me
     }
