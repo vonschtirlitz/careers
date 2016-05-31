@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Dealer()
+comment1.params=
+comment1.target=void\ fillExperienceHand()
+comment2.params=
+comment2.target=void\ fillOpportunityHand()
+comment3.params=
+comment3.target=java.util.ArrayList\ getOpportunityDeck()
+comment4.params=
+comment4.target=Opportunity\ dealTopOpportunity()
+comment5.params=
+comment5.target=experienceCard\ dealTopExperience()
+comment6.params=card
+comment6.target=void\ collectExperienceCard(experienceCard)
+comment7.params=card
+comment7.target=void\ collectOpportunityCard(Opportunity)
+numComments=8
